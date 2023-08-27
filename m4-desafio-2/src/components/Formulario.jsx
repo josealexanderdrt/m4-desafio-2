@@ -97,10 +97,7 @@ const Formulario = ({mostrarAlerta}) => {
        
 
     </form> 
-{/* 
-    <div className="mError" >
-    {mensajevalidacion? <p>{mensajevalidacion}</p>:null}
-    </div> */}
+
    
     </>
   )
