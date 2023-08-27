@@ -48,10 +48,20 @@
   border-radius: 50%;
 }
 
+
 .form-group {
   margin: 15px;
+  
 }
 .mError{
   margin:20px;
   background-color: red;
+}
+
+.gcontenedor {
+  border: 1px solid black;
+  padding: 30px;
+  border-radius: 50px;
+  
+
 }

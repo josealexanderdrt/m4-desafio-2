@@ -1,38 +1,38 @@
 import { useState } from "react"
-const Formulario = () => {
+const Formulario = ({mostrarAlerta}) => {
     const [nombre, setNombre] = useState('');
     const [mail, setMail] = useState ('');
     const [contraseña, setContraseña] = useState('');
     const [confirmacontraseña, setConfirmacontraseña] = useState ('');
-    const [mensajevalidacion, setMensajevalidacion] = useState ('');
+
+    const limpiarFormulario = ()=>{
+        setNombre('');
+        setMail('');
+        setContraseña('');
+        setConfirmacontraseña('');
+    }
 
     
     // estado para los errores
     const [error, setError] = useState(false);
    //Funcion antes de enviar el Formulario
     const validarDatos = (e) => {
-        e.preventDefault()
-
+        e.preventDefault();
         //Validacion
        if (nombre === '' ||mail ==='' || contraseña ==='' || confirmacontraseña ===''){
-        setError(true)
-        setMensajevalidacion ("Debes completar los campos")
-        return
+        mostrarAlerta('danger','Debe completar los campos');
+         return
        }
 
        if (contraseña !== confirmacontraseña){
-        setError(true)
-        setMensajevalidacion  ("Las contraseñas no coinciden")
+        mostrarAlerta('danger','Contraseñas no coinciden');
         return
-       }
+       }else{
+        mostrarAlerta('success','Registro exitoso');
+        limpiarFormulario();
+        return
+       }     
 
-       setError(false);
-       setNombre('');
-       setMail('');
-       setContraseña('');
-       setConfirmacontraseña('');
-
-       setMensajevalidacion('');
     };
 
   return (
@@ -97,10 +97,10 @@ const Formulario = () => {
        
 
     </form> 
-
+{/* 
     <div className="mError" >
     {mensajevalidacion? <p>{mensajevalidacion}</p>:null}
-    </div>
+    </div> */}
    
     </>
   )

@@ -1,13 +1,12 @@
-import React from 'react'
+import Badge from 'react-bootstrap/Badge';
 
-const Alert = () => {
+const Alert = ({color, msg}) => {
   return (
-    <>
- {/*    <div className="mError" >
-         <p>MENSAJE</p>
-    </div> */}
+      <>
+        <Badge bg={color}>{msg}</Badge>  
     </>
-  )
+    )
+  
 }
 
 export default Alert
