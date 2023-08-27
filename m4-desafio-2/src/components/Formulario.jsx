@@ -21,7 +21,7 @@ const Formulario = ({setAlert}) => {
         //Validacion
        if (nombre === '' ||mail ==='' || contraseña ==='' || confirmacontraseña ===''){
         setAlert({
-            color:'danger',
+            color:'warning',
             msg: 'Debe completar los campos'
         });
          return
