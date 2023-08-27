@@ -1,5 +1,5 @@
 import { useState } from "react"
-const Formulario = ({mostrarAlerta}) => {
+const Formulario = ({setAlert}) => {
     const [nombre, setNombre] = useState('');
     const [mail, setMail] = useState ('');
     const [contraseña, setContraseña] = useState('');
@@ -20,15 +20,24 @@ const Formulario = ({mostrarAlerta}) => {
         e.preventDefault();
         //Validacion
        if (nombre === '' ||mail ==='' || contraseña ==='' || confirmacontraseña ===''){
-        mostrarAlerta('danger','Debe completar los campos');
+        setAlert({
+            color:'danger',
+            msg: 'Debe completar los campos'
+        });
          return
        }
 
        if (contraseña !== confirmacontraseña){
-        mostrarAlerta('danger','Contraseñas no coinciden');
+        setAlert({
+            color:'danger',
+            msg:'Contraseñas no coinciden'
+        });
         return
        }else{
-        mostrarAlerta('success','Registro exitoso');
+        setAlert({
+            color:'success',
+            msg:'Registro exitoso'
+        });
         limpiarFormulario();
         return
        }     

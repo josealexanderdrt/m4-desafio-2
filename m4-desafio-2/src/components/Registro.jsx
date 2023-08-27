@@ -10,14 +10,6 @@ const Registro = () => {
     color:'',
     msg:''
   });
-
-  const mostrarAlerta= (color, msg)=>{
-    setAlert({
-      color:color,
-      msg:msg
-    })
-
-  }
   
   return (
     <>
@@ -25,7 +17,7 @@ const Registro = () => {
     <h1>Crea Una Cuenta</h1>
     <SocialButton icono1={faFacebook} icono2={faLinkedin} icono3={faGithub}/>
     <h4>O usa tu mail para registrarte</h4>
-    <Formulario mostrarAlerta={mostrarAlerta}/>
+    <Formulario setAlert={setAlert}/>
     <Alert color={alerta.color} msg={alerta.msg}/>
     </div>
     </>
